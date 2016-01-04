@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="ruralhouses"/>
+  <table-filter match-name="eskaintza"/>
+  <table-filter match-name="erreserba"/>
+  <table-filter match-name="iruzkina"/>
+  <table-filter match-name="erabiltzailea"/>
+  <table-filter match-name="landetxea"/>
+  <table-filter match-name="galdera"/>
+  <table-filter match-name="txangoa"/>
+  <table-filter match-name="inkesta"/>
+</hibernate-reverse-engineering>

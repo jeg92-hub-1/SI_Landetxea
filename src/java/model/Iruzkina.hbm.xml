@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 04-ene-2016 15:45:06 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Iruzkina" table="iruzkina" catalog="ruralhouses" optimistic-lock="version">
+        <composite-id name="id" class="model.IruzkinaId">
+            <key-property name="landetxeaId" type="string">
+                <column name="LandetxeaID" />
+            </key-property>
+            <key-property name="erabIzena" type="string">
+                <column name="erabIzena" />
+            </key-property>
+            <key-property name="testua" type="string">
+                <column name="Testua" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

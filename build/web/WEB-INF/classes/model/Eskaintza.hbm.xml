@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 04-ene-2016 15:45:06 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Eskaintza" table="eskaintza" catalog="ruralhouses" optimistic-lock="version">
+        <composite-id name="id" class="model.EskaintzaId">
+            <key-property name="landetxeaId" type="int">
+                <column name="LandetxeaID" />
+            </key-property>
+            <key-property name="eskaintzaId" type="int">
+                <column name="EskaintzaID" />
+            </key-property>
+        </composite-id>
+        <property name="hasieraData" type="date">
+            <column name="HasieraData" length="10" not-null="true" />
+        </property>
+        <property name="amaieraData" type="date">
+            <column name="AmaieraData" length="10" not-null="true" />
+        </property>
+        <property name="prezioa" type="float">
+            <column name="Prezioa" precision="12" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <f:facet name="first">
+            <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+            <title>LANDETXEA</title>
+            <link href="css/styles.css" rel="stylesheet"/>
+        </f:facet>
+    </h:head>
+
+    <h:body>
+        <div id="wrapper">
+            <div id="header-wrapper">
+                <div id="header" class="container">
+                    <div id="logo">
+                        <h1><a href="#">LANDETXEA</a></h1>
+                    </div>
+                    <div id="menu">
+                        <ul>
+                            <li ><h:link outcome="index" value="HASIERA" /></li>
+                            <li><h:link outcome="index" value="LANDETXEAK BILATU" /></li>
+                            <li><h:link outcome="login" value="LOGIN" /></li>
+                            <li class="current_page_item"><h:link outcome="erregistratu" value="ERREGISTRATU" /></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="banner">
+                    <img src="images/ruralhouse.jpg" width="1000" height="230" alt="" />
+                </div>
+            </div>
+            <!-- end #header -->
+            <div id="page">
+                <div class="post">
+                    <div class="entry">
+                        <h2 class="title"><a href="#">ERREGISTRATU</a></h2>
+
+                        <h:form id="erregistratuForm">
+                            <h:panelGrid columns="1" id="erregistratu">
+
+                                <h:outputText value="Izena: * "/>
+                                <p:inputText  id="Izena" size="35" value="#{erregistratuBean.izena}" />
+                                <p:message id="Message_Izena" for="Izena" display="text" />
+                                
+                                <h:outputText value="Erabiltzaile izena: * "/>
+                                <p:inputText  id="Erabiltzailea" size="35"  value="#{erregistratuBean.erabIzena}"/>
+                                <p:message id="textOnlyMessage_Erabiltzailea" for="Erabiltzailea" display="text" />
+
+                                <h:outputLabel for="pasahitza1" value="Pasahitza: *" />
+                                <p:password id="pasahitza1" value="#{erregistratuBean.pasahitza}" match="pasahitza2" label="Pasahitza 1" required="true" />
+
+                                <h:outputLabel for="pasahitza2" value="Pasahitza berretsi: *" />
+                                <p:password id="pasahitza2" value="#{erregistratuBean.pasahitza}" label="Pasahitza 2" required="true" />
+
+                                <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+                                    <p:outputLabel for="jabeaBaiEz" value="Landetxeak kudeatu nahi dituzu?" />
+                                    <p:selectOneRadio id="jabeaBaiEz" value="#{erregistratuBean.jabeaBaiEz}">
+                                        <f:selectItem itemLabel="Bai" itemValue="Bai" />
+                                        <f:selectItem itemLabel="Ez" itemValue="Ez" />
+                                    </p:selectOneRadio>
+                                </h:panelGrid>
+
+                                <h:outputText value="Kontu-korrontea: * "/>
+                                <p:inputText  id="KontuKorrontea" size="35" value="#{erregistratuBean.kontua}"/>
+                                <p:message id="textOnlyMessage_KontuKorrontea" for="KontuKorrontea" display="text" />
+
+
+                                <p:commandButton value="Erregistratu" action="#{erregistratuBean.gorde}" update="erregistratu"/>
+                                <p:message for="erregistratuForm"/>
+                            </h:panelGrid>
+                        </h:form>
+                    </div>
+                </div>
+                <!-- end #content -->
+                <div style="clear: both;">&nbsp;</div>
+            </div>
+            <!-- end #page --> 
+        </div>
+        <div id="footer">
+            <p>&copy; Untitled. All rights reserved. Images by <a href="http://fotogrph.com/">Fotogrph</a>. Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+        </div>
+        <!-- end #footer -->
+    </h:body>
+</html>

@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <f:facet name="first">
+            <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+            <title>LANDETXEA</title>
+            <link href="css/styles.css" rel="stylesheet"/>
+        </f:facet>
+    </h:head>
+
+    <h:body>
+        <div id="wrapper">
+            <div id="header-wrapper">
+                <div id="header" class="container">
+                    <div id="logo">
+                        <h1><a href="#">LANDETXEA</a></h1>
+                    </div>
+                    <div id="menu">
+                        <ul>
+                            <li><h:link outcome="jabea" value="HASIERA" /></li>
+                            <li class="current_page_item"><h:link outcome="landetxeKudeaketa" value="LANDETXE KUDEAKETA" /></li>
+                            <li><h:link outcome="profila" value="PROFILA" /></li>
+                            <li> <p:commandLink  id="logout" actionListener="#{loginBean.logout}" oncomplete="logout(xhr, status, args)">
+                                <h:outputText value="LOGOUT" />
+                            </p:commandLink></li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div id="banner">
+                    <img src="images/ruralhouse.jpg" width="1000" height="230" alt="" />
+                </div>
+            </div>
+            <!-- end #header -->
+            <div id="page">
+                <div class="post">
+                    <div class="entry">
+                        <div style="float:left">
+                            <h:form>
+
+                                <p:menu>
+                                    <p:submenu label="KUDEAKETA">
+                                        <p:menuitem value="> sortu" outcome="landetxeaSortu"/>
+                                        <p:menuitem value="> ezabatu" outcome="landetxeaEzabatu"/>
+                                    </p:submenu>
+
+                                </p:menu>
+                            </h:form>
+                        </div>
+                        <div style="float:left;margin-left:30px;">
+                            <p> Zure profila ikusteko, ezbatzeko edota aldatzeko, ezkerreko menuan dauden aukereetatik bat aukeratu </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- end #content -->
+                <div style="clear: both;">&nbsp;</div>
+            </div>
+            <!-- end #page --> 
+        </div>
+        <div id="footer">
+            <p>&copy; Untitled. All rights reserved. Images by <a href="http://fotogrph.com/">Fotogrph</a>. Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+        </div>
+        <!-- end #footer -->
+        <script type="text/javascript">
+            //<![CDATA[
+            function logout(xhr, status, args) {
+                setTimeout(function () {
+                    window.location = 'index.xhtml';
+                }, 500);
+            }
+//]]>
+        </script>
+    </h:body>
+</html>
